@@ -1,19 +1,22 @@
 // Modules to control application life and create native browser window
 import { app, BrowserWindow } from 'electron';
-import path from 'path';
+import { join } from 'path';
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1280,
     height: 800,
     webPreferences: {
-      preload: path.join(__dirname, '..', 'build', 'preload.js'),
+      preload: join(__dirname, '..', 'build', 'preload.js'),
     },
   });
 
-  mainWindow.loadURL('http://localhost:1234');
-
-  mainWindow.webContents.openDevTools();
+  if (app.isPackaged) {
+    mainWindow.loadFile('build/index.html');
+  } else {
+    mainWindow.loadURL('http://localhost:1234');
+    mainWindow.webContents.openDevTools();
+  }
 };
 
 app.whenReady().then(() => {

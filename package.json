@@ -1,17 +1,35 @@
 {
+  "name": "untitled-app",
   "scripts": {
     "lint": "eslint --fix '**/*.{ts,tsx,js,jsx}' && prettier --write .",
     "watch": "ts-node scripts/watch.ts",
-    "start": "nodemon --watch build/electron.js --exec 'electron .'"
+    "start": "nodemon --watch build/electron.js --exec 'electron .'",
+    "build": "rm -rf build && parcel build",
+    "pack:mac": "yarn build && rm -rf dist && yarn electron-builder --universal --dir"
+  },
+  "build": {
+    "appId": "app.macmate.untitled-app",
+    "files": [
+      "build"
+    ]
   },
   "main": "build/electron.js",
   "license": "UNLICENSED",
   "version": "0.1.0",
   "targets": {
     "electron": {
-      "source": ["src/electron.ts", "src/preload.ts"],
+      "source": [
+        "src/electron.ts",
+        "src/preload.ts"
+      ],
       "context": "electron-main",
       "distDir": "build"
+    },
+    "web": {
+      "source": "src/index.html",
+      "context": "browser",
+      "distDir": "build",
+      "publicUrl": "."
     }
   },
   "devDependencies": {
@@ -22,11 +40,13 @@
     "@typescript-eslint/parser": "^5.55.0",
     "antd": "^5.3.1",
     "electron": "^23.1.4",
+    "electron-builder": "^23.6.0",
     "eslint": "^8.36.0",
     "eslint-config-alloy": "^4.9.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "events": "^3.3.0",
+    "nodemon": "^2.0.21",
     "parcel": "^2.8.3",
     "prettier": "^2.8.4",
     "process": "^0.11.10",
@@ -36,7 +56,6 @@
     "ts-node": "^10.9.1",
     "ttpt": "^0.3.2",
     "typescript": "^5.0.2",
-    "yarn-upgrade-all": "^0.7.2",
-    "nodemon": "^2.0.21"
+    "yarn-upgrade-all": "^0.7.2"
   }
 }
