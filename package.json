@@ -9,12 +9,7 @@
   "version": "0.1.0",
   "targets": {
     "electron": {
-      "source": "src/electron.ts",
-      "context": "electron-main",
-      "distDir": "build"
-    },
-    "preload": {
-      "source": "src/preload.ts",
+      "source": ["src/electron.ts", "src/preload.ts"],
       "context": "electron-main",
       "distDir": "build"
     }
