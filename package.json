@@ -2,7 +2,7 @@
   "scripts": {
     "lint": "eslint --fix '**/*.{ts,tsx,js,jsx}' && prettier --write .",
     "watch": "ts-node scripts/watch.ts",
-    "start": "electron ."
+    "start": "nodemon --watch build/electron.js --exec 'electron .'"
   },
   "main": "build/electron.js",
   "license": "UNLICENSED",
@@ -41,7 +41,7 @@
     "ts-node": "^10.9.1",
     "ttpt": "^0.3.2",
     "typescript": "^5.0.2",
-    "wait-for-async": "^0.6.1",
-    "yarn-upgrade-all": "^0.7.2"
+    "yarn-upgrade-all": "^0.7.2",
+    "nodemon": "^2.0.21"
   }
 }
