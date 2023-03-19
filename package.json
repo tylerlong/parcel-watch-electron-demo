@@ -15,16 +15,8 @@
     },
     "preload": {
       "source": "src/preload.ts",
-      "context": "node",
+      "context": "electron-main",
       "distDir": "build"
-    },
-    "renderer": {
-      "source": "src/index.html",
-      "context": "browser",
-      "publicUrl": ".",
-      "engines": {
-        "browsers": "last 2 Electron versions"
-      }
     }
   },
   "devDependencies": {
@@ -47,8 +39,9 @@
     "react-dom": "^18.2.0",
     "shell-commands": "^0.1.2",
     "ts-node": "^10.9.1",
-    "ttpt": "^0.3.1",
+    "ttpt": "^0.3.2",
     "typescript": "^5.0.2",
+    "wait-for-async": "^0.6.1",
     "yarn-upgrade-all": "^0.7.2"
   }
 }

@@ -3405,10 +3405,10 @@ tsutils@^3.21.0:
   dependencies:
     tslib "^1.8.1"
 
-ttpt@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/ttpt/-/ttpt-0.3.1.tgz#bc87bee4391f6adfb4d8ccb35d8d7722a59af7e8"
-  integrity sha512-p1Iyvx9GWp/61CrSdVdksXOZ81yaaXgvEANTFDUC0YM0N/4KL+BSQUAlw5h0fxmMiy3CGRSpZhwhkrAlvNJ6xw==
+ttpt@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/ttpt/-/ttpt-0.3.2.tgz#1fa8f036252051eb18697f1954b6764842335544"
+  integrity sha512-Icmv+3h8fyg61ZmJUw6GuNQrYwGHarTi2xDiWRS+0O/s5tF5jNFFeX2mbaduJFgFvMouwzFoWN7OV3HvOKVy/A==
   dependencies:
     lodash "^4.17.21"
     shell-commands "^0.1.2"
@@ -3469,6 +3469,11 @@ v8-compile-cache@^2.0.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
+
+wait-for-async@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/wait-for-async/-/wait-for-async-0.6.1.tgz#7e3f92de3e6c26db1460439e18c7c6f7eb2067b1"
+  integrity sha512-iKwUTzFmuwnzArmHz8lk4OkRF5We9lp88zGj23s1Nr9oJh5I57HpcAvjW+0c8nYXm7Vm98RP5WhjYogZzDWvhw==
 
 weak-lru-cache@^1.2.2:
   version "1.2.2"

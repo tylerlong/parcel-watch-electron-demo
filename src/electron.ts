@@ -31,4 +31,4 @@ app.on('window-all-closed', () => {
   }
 });
 
-console.log('Hello world!!');
+console.log('Hello world!');
