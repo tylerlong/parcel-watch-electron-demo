@@ -1,7 +1,8 @@
 {
   "scripts": {
     "lint": "eslint --fix '**/*.{ts,tsx,js,jsx}' && prettier --write .",
-    "build": "rm -rf build && parcel build --target electron --target preload && parcel src/index.html --dist-dir build",
+    "watch": "rm -rf build && parcel watch --target electron --target preload -p 1235",
+    "build": "parcel src/index.html --dist-dir build -p 1234",
     "start": "electron ."
   },
   "main": "build/electron.js",

@@ -30,3 +30,5 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
+
+console.log('Hello world!');
