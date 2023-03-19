@@ -1,10 +1,32 @@
 {
   "scripts": {
-    "serve": "parcel src/index.html --dist-dir docs",
-    "lint": "eslint --fix '**/*.{ts,tsx,js,jsx}' && prettier --write ."
+    "lint": "eslint --fix '**/*.{ts,tsx,js,jsx}' && prettier --write .",
+    "build": "rm -rf build && parcel build --target electron --target preload && parcel src/index.html --dist-dir build",
+    "start": "electron ."
   },
+  "main": "build/electron.js",
   "license": "UNLICENSED",
   "version": "0.1.0",
+  "targets": {
+    "electron": {
+      "source": "src/electron.ts",
+      "context": "electron-main",
+      "distDir": "build"
+    },
+    "preload": {
+      "source": "src/preload.ts",
+      "context": "node",
+      "distDir": "build"
+    },
+    "renderer": {
+      "source": "src/index.html",
+      "context": "browser",
+      "publicUrl": ".",
+      "engines": {
+        "browsers": "last 2 Electron versions"
+      }
+    }
+  },
   "devDependencies": {
     "@tylerlong/use-proxy": "^1.2.3",
     "@types/node": "^18.15.3",
@@ -12,11 +34,12 @@
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "antd": "^5.3.1",
+    "electron": "^23.1.4",
     "eslint": "^8.36.0",
     "eslint-config-alloy": "^4.9.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "events": "^3.1.0",
+    "events": "^3.3.0",
     "parcel": "^2.8.3",
     "prettier": "^2.8.4",
     "process": "^0.11.10",
