@@ -12,7 +12,7 @@ const createWindow = () => {
   });
 
   if (app.isPackaged) {
-    mainWindow.loadFile('build/index.html');
+    mainWindow.loadFile(join('build', 'index.html'));
   } else {
     mainWindow.loadURL('http://localhost:1234');
     mainWindow.webContents.openDevTools();

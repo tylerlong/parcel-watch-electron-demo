@@ -5,13 +5,7 @@
     "watch": "ts-node scripts/watch.ts",
     "start": "nodemon --watch build/electron.js --exec 'electron .'",
     "build": "rm -rf build && parcel build",
-    "pack:mac": "yarn build && rm -rf dist && yarn electron-builder --universal --dir"
-  },
-  "build": {
-    "appId": "app.macmate.untitled-app",
-    "files": [
-      "build"
-    ]
+    "pack:mac": "yarn build && rm -rf dist && yarn electron-builder --universal --dir --config electron-builder.ts"
   },
   "main": "build/electron.js",
   "license": "UNLICENSED",
@@ -40,7 +34,7 @@
     "@typescript-eslint/parser": "^5.55.0",
     "antd": "^5.3.1",
     "electron": "^23.1.4",
-    "electron-builder": "^23.6.0",
+    "electron-builder": "^24.0.0",
     "eslint": "^8.36.0",
     "eslint-config-alloy": "^4.9.0",
     "eslint-config-prettier": "^8.7.0",
