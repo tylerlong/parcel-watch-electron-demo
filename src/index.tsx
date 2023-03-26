@@ -12,3 +12,5 @@ root.render(
     <App store={store} />
   </StrictMode>,
 );
+
+global.electronAPI.hello('Tyler');

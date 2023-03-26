@@ -13,10 +13,16 @@
   "targets": {
     "electron": {
       "source": [
-        "src/electron.ts",
-        "src/preload.ts"
+        "src/electron.ts"
       ],
       "context": "electron-main",
+      "distDir": "build"
+    },
+    "preload": {
+      "source": [
+        "src/preload.ts"
+      ],
+      "context": "node",
       "distDir": "build"
     },
     "web": {

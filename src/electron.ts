@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import { join } from 'path';
 
 const createWindow = () => {
@@ -34,4 +34,6 @@ app.on('window-all-closed', () => {
   }
 });
 
-console.log('Hello world!');
+ipcMain.handle('HELLO', (event, name) => {
+  console.log('Hello from render', name);
+});
